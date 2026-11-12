@@ -1,68 +1,469 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#f6f5f0">
-  <meta name="description" content="Personal portfolio of Hasan — designer and developer building thoughtful digital experiences.">
-  <title>Hasan — Designer &amp; Developer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{--paper:#f6f5f0;--ink:#20221f;--muted:#74766e;--line:#d8d8d0;--green:#bdff59;--mono:'DM Mono',monospace;--sans:'Manrope',sans-serif}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 64px));margin:auto}
-    .nav{height:84px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{font-weight:800;letter-spacing:-.06em;font-size:22px}.brand span{color:#8aaf48}.nav-links{display:flex;gap:34px;align-items:center;font-size:13px;color:#55574f}.nav-links a:hover{color:#111}.nav-cta{border:1px solid var(--ink);padding:12px 17px;border-radius:4px;color:var(--ink)!important;transition:.2s}.nav-cta:hover{background:var(--ink);color:var(--paper)!important}
-    .hero{padding:104px 0 100px;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;min-height:560px}.eyebrow,.label{font-family:var(--mono);font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}.eyebrow{display:flex;align-items:center;gap:10px}.dot{height:8px;width:8px;border-radius:50%;background:#82b940;box-shadow:0 0 0 4px #82b94022}.hero h1{font-size:clamp(54px,7.1vw,92px);letter-spacing:-.085em;line-height:.99;margin:27px 0 23px;font-weight:600}.hero h1 em{font-style:normal;color:#8fae57}.intro{font-size:16px;color:#65675f;line-height:1.8;max-width:490px}.actions{display:flex;gap:13px;margin-top:31px}.button{font-size:13px;font-weight:700;padding:15px 20px;border:1px solid var(--ink);border-radius:4px;display:inline-flex;align-items:center;gap:12px;transition:.2s}.button.primary{background:var(--ink);color:white}.button.primary:hover{background:#454740}.button.secondary:hover{background:#eae9e2}.arrow{font-size:17px;line-height:10px}
-    .portrait{height:370px;position:relative;background:#e8e9df;border-radius:5px;overflow:hidden;display:flex;align-items:center;justify-content:center}.portrait:before,.portrait:after{content:'';position:absolute;border:1px solid #c9cebb;border-radius:50%;width:270px;height:270px}.portrait:after{width:360px;height:360px}.monogram{position:relative;z-index:1;font-size:140px;letter-spacing:-.12em;font-weight:800;color:#71834e;line-height:1}.portrait-tag{position:absolute;z-index:2;bottom:22px;left:22px;background:var(--paper);padding:10px 13px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase}.spark{position:absolute;right:45px;top:46px;color:#8bab55;font-size:25px}
-    .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:23px 0;display:flex;justify-content:space-between;align-items:center;gap:20px}.strip p{margin:0;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}.tools{display:flex;gap:34px;color:#62645c;font-size:12px;font-weight:700}
-    section.content{padding:100px 0}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:40px}.section-head h2{font-size:42px;letter-spacing:-.07em;font-weight:600;margin:12px 0 0}.section-note{color:var(--muted);font-size:13px;max-width:280px;line-height:1.7}.projects{display:grid;grid-template-columns:1fr 1fr;gap:22px}.project{border:1px solid var(--line);border-radius:5px;overflow:hidden;background:#eeede7;transition:transform .25s}.project:hover{transform:translateY(-4px)}.project-art{height:255px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}.art-one{background:#dfe6d1}.art-two{background:#e9d9cc}.mock{width:70%;height:73%;background:#faf9f5;border-radius:7px;box-shadow:0 15px 36px #26301920;position:relative;padding:18px;transform:rotate(-3deg)}.mock-top{display:flex;justify-content:space-between;font-size:8px;font-weight:800;color:#393d34}.mock-block{margin-top:24px;width:50%;height:74px;background:#b8d58e;border-radius:4px}.mock-lines{position:absolute;right:17px;top:60px;width:31%;height:7px;background:#e6e7df;box-shadow:0 14px #e6e7df,0 28px #e6e7df}.mock-button{position:absolute;bottom:17px;left:18px;width:62px;height:17px;border-radius:3px;background:#263321}.art-two .mock{transform:rotate(3deg);background:#fcf4eb}.art-two .mock-block{background:#e9aa86}.project-info{padding:19px 20px 21px;background:var(--paper);display:flex;justify-content:space-between;align-items:center}.project-info h3{font-size:16px;margin:0 0 6px;letter-spacing:-.03em}.project-info p{font-size:11px;color:var(--muted);margin:0}.project-arrow{height:34px;width:34px;border:1px solid var(--line);display:grid;place-items:center;border-radius:50%;font-size:17px}
-    .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:100px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.about h2{font-size:42px;line-height:1.08;letter-spacing:-.07em;font-weight:600;margin:13px 0}.about-copy{font-size:15px;line-height:1.9;color:#65675f}.about-copy p{margin:0 0 16px}.about-copy strong{color:var(--ink);font-weight:700}.skills{display:flex;gap:9px;flex-wrap:wrap;margin-top:25px}.skill{font-family:var(--mono);font-size:10px;border:1px solid var(--line);border-radius:3px;padding:9px 11px;color:#55574f}
-    .contact{padding:86px 0 94px;text-align:center}.contact h2{font-size:clamp(42px,6vw,68px);letter-spacing:-.08em;font-weight:600;margin:15px 0}.contact p{color:var(--muted);font-size:14px;margin:0 auto 26px}.contact .button{background:var(--green);border-color:var(--green)}.contact .button:hover{background:#aceb4f}.footer{border-top:1px solid var(--line);padding:23px 0;display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-family:var(--mono);font-size:10px}.socials{display:flex;gap:22px}.socials a:hover{color:var(--ink)}
-    @media(max-width:760px){.wrap{width:min(100% - 40px,560px)}.nav{height:70px}.nav-links{gap:16px}.nav-links a:not(.nav-cta){display:none}.nav-cta{padding:10px 12px}.hero{padding:65px 0 62px;grid-template-columns:1fr;gap:34px}.hero h1{font-size:clamp(56px,14vw,82px)}.portrait{height:290px;grid-row:1}.monogram{font-size:112px}.intro{font-size:14px}.strip{align-items:flex-start;flex-direction:column}.tools{gap:20px;flex-wrap:wrap}.content{padding:74px 0!important}.section-head{align-items:flex-start;flex-direction:column;gap:10px}.section-head h2,.about h2{font-size:36px}.projects{grid-template-columns:1fr}.project-art{height:220px}.about{grid-template-columns:1fr;gap:14px;padding-top:70px;padding-bottom:70px}.contact{padding:72px 0}.footer{gap:14px;flex-wrap:wrap}.socials{gap:15px}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
-  </style>
-</head>
-<body>
-  <header class="wrap nav">
-    <a class="brand" href="#home" aria-label="Hasan home">hasan<span>.</span></a>
-    <nav class="nav-links" aria-label="Main navigation">
-      <a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a>
-      <a class="nav-cta" href="mailto:hello@example.com">Let’s talk <span class="arrow">↗</span></a>
-    </nav>
-  </header>
-  <main>
-    <section class="wrap hero" id="home">
-      <div>
-        <div class="eyebrow"><span class="dot"></span> Available for select projects</div>
-        <h1>Designing<br>with <em>purpose.</em></h1>
-        <p class="intro">Hi, I’m Hasan — a designer and developer creating clear, thoughtful digital experiences for people and the businesses they love.</p>
-        <div class="actions"><a class="button primary" href="#work">Explore my work <span class="arrow">↓</span></a><a class="button secondary" href="#about">A little about me</a></div>
-      </div>
-      <div class="portrait" aria-label="Abstract portrait illustration">
-        <span class="spark">✳</span><div class="monogram">H.</div><span class="portrait-tag">Independent creative · Dhaka</span>
-      </div>
-    </section>
-    <div class="wrap strip"><p>Things I work with</p><div class="tools"><span>UI / UX</span><span>Web design</span><span>Frontend</span><span>Brand identity</span><span>Prototyping</span></div></div>
-    <section class="wrap content" id="work">
-      <div class="section-head"><div><div class="label">Selected projects · 2024—26</div><h2>Good work, thoughtfully made.</h2></div><p class="section-note">A few concepts and collaborations that bring useful ideas to life.</p></div>
-      <div class="projects">
-        <a class="project" href="#contact" aria-label="Discuss the Northstar project">
-          <div class="project-art art-one"><div class="mock"><div class="mock-top"><span>NORTHSTAR</span><span>☰</span></div><div class="mock-block"></div><div class="mock-lines"></div><div class="mock-button"></div></div></div>
-          <div class="project-info"><div><h3>Northstar — Find your next step</h3><p>Product design · Web app</p></div><span class="project-arrow">↗</span></div>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b0f19">
+    <meta
+      name="description"
+      content="HaSaN — aspiring programmer learning web development and problem solving."
+    >
+    <title>HaSaN | Aspiring Programmer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <!-- Site navigation -->
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="wordmark" href="#home" aria-label="HaSaN, home">
+          <span class="wordmark-icon" aria-hidden="true">H</span>
+          <span class="wordmark-name">HaSaN</span>
         </a>
-        <a class="project" href="#contact" aria-label="Discuss the Sunday Studio project">
-          <div class="project-art art-two"><div class="mock"><div class="mock-top"><span>SUNDAY STUDIO</span><span>MENU</span></div><div class="mock-block"></div><div class="mock-lines"></div><div class="mock-button"></div></div></div>
-          <div class="project-info"><div><h3>Sunday Studio — Made for slow days</h3><p>Brand identity · E-commerce</p></div><span class="project-arrow">↗</span></div>
-        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          aria-label="Open navigation"
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav id="primary-nav" class="nav-links" aria-label="Main navigation">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#journey">Journey</a>
+          <a href="#contact">Contact</a>
+          <a
+            class="nav-github"
+            href="https://github.com/ihasan2008"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub <span aria-hidden="true">↗</span>
+          </a>
+        </nav>
       </div>
-    </section>
-    <section class="wrap about content" id="about">
-      <div><div class="label">A little about me</div><h2>Curious by nature.<br>Careful by design.</h2></div>
-      <div class="about-copy"><p>I’m a multidisciplinary creative who enjoys turning complex problems into simple, useful experiences. My work sits where <strong>design, technology, and everyday life</strong> meet.</p><p>From the first sketch to the final details, I care about making things feel intuitive, considered, and a little bit delightful. I’m always learning, asking better questions, and looking for the next good challenge.</p><div class="skills"><span class="skill">Figma</span><span class="skill">HTML &amp; CSS</span><span class="skill">JavaScript</span><span class="skill">Design systems</span><span class="skill">Prototyping</span></div></div>
-    </section>
-    <section class="wrap contact" id="contact"><div class="label">Have something in mind?</div><h2>Let’s make it happen.</h2><p>Have a project, a question, or just want to say hello? My inbox is open.</p><a class="button" href="mailto:hello@example.com">Send me an email <span class="arrow">↗</span></a></section>
-  </main>
-  <footer class="wrap footer"><span>© 2026 Hasan. Made with care.</span><div class="socials"><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/" target="_blank" rel="noreferrer">GitHub ↗</a><a href="mailto:hello@example.com">Email ↗</a></div></footer>
-</body>
+    </header>
+
+    <main id="main-content">
+      <!-- Introduction and profile photo -->
+      <section class="hero section" id="home" aria-labelledby="hero-title">
+        <div class="hero-grid container">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">
+              <span class="status-dot"></span>
+              Learning · Building · Improving
+            </p>
+
+            <h1 id="hero-title">
+              Hi, I’m <span>HaSaN.</span><br>
+              Learning to build<br>
+              <span class="outline-text">what’s next.</span>
+            </h1>
+
+            <p class="hero-role">Aspiring Programmer &amp; Problem Solver</p>
+            <p class="hero-description">
+              I’m learning programming, web development, and problem solving.
+              I enjoy understanding how technology works and building projects
+              as I grow.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="#projects">
+                View my projects <span aria-hidden="true">↓</span>
+              </a>
+              <a
+                class="button button-quiet"
+                href="https://github.com/ihasan2008"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore my GitHub <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+
+            <a class="scroll-cue" href="#about">
+              <span class="scroll-line"></span>
+              Scroll to explore
+            </a>
+          </div>
+
+          <div class="hero-visual reveal">
+            <div class="photo-frame">
+              <div class="photo-grid" aria-hidden="true"></div>
+              <img
+                class="profile-photo"
+                src="assets/profile.png"
+                alt="Portrait of HaSaN"
+                fetchpriority="high"
+              >
+              <span class="photo-caption">
+                <i></i>
+                Curious mind, always learning
+              </span>
+            </div>
+
+            <span class="orbit orbit-one" aria-hidden="true"></span>
+            <span class="orbit orbit-two" aria-hidden="true"></span>
+
+            <div class="floating-code" aria-hidden="true">
+              <span>const</span> future = <b>build();</b>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section
+        class="section section-soft"
+        id="about"
+        aria-labelledby="about-title"
+      >
+        <div class="container about-grid">
+          <div class="section-intro reveal">
+            <p class="eyebrow">01 / About me</p>
+            <h2 id="about-title">A little about<br><span>my journey.</span></h2>
+          </div>
+
+          <div class="about-copy reveal">
+            <p class="lead">
+              I’m HaSaN, an aspiring programmer focused on building strong
+              programming fundamentals and problem-solving skills.
+            </p>
+            <p>
+              I’m currently learning web development and exploring how software
+              is designed and built. I like turning curiosity into small
+              experiments, learning from each attempt, and sharing what I make.
+            </p>
+            <p>
+              My goal is to keep learning, create useful projects, and grow into
+              a skilled software developer.
+            </p>
+
+            <div class="about-note">
+              <span class="note-icon">✳</span>
+              <span>One step at a time. Always curious.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section class="section" id="skills" aria-labelledby="skills-title">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div>
+              <p class="eyebrow">02 / Current toolkit</p>
+              <h2 id="skills-title">Things I’m <span>learning.</span></h2>
+            </div>
+            <p class="section-aside">
+              I keep this list honest and update it as my experience grows.
+            </p>
+          </div>
+
+          <div class="skill-groups">
+            <article class="skill-card reveal">
+              <div class="card-index">A</div>
+              <h3>Web development</h3>
+              <p>
+                Learning the building blocks of the web and how they work
+                together.
+              </p>
+              <div class="tag-list">
+                <span>HTML <small>Learning</small></span>
+                <span>CSS <small>Learning</small></span>
+                <span>JavaScript <small>Learning</small></span>
+              </div>
+            </article>
+
+            <article class="skill-card reveal">
+              <div class="card-index">B</div>
+              <h3>Programming</h3>
+              <p>
+                Strengthening fundamentals and building confidence through
+                practice.
+              </p>
+              <div class="tag-list">
+                <span>Programming fundamentals <small>Learning</small></span>
+                <span>Problem solving <small>Practicing</small></span>
+              </div>
+            </article>
+
+            <article class="skill-card reveal">
+              <div class="card-index">C</div>
+              <h3>Tools &amp; workflow</h3>
+              <p>
+                Getting comfortable with the tools that support making and
+                sharing projects.
+              </p>
+              <div class="tag-list">
+                <span>Git <small>Learning</small></span>
+                <span>GitHub <small>Learning</small></span>
+                <span>VS Code <small>Using</small></span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section
+        class="section section-soft"
+        id="projects"
+        aria-labelledby="projects-title"
+      >
+        <div class="container">
+          <div class="section-heading reveal">
+            <div>
+              <p class="eyebrow">03 / Selected work</p>
+              <h2 id="projects-title">Made while <span>learning.</span></h2>
+            </div>
+            <p class="section-aside">
+              A small, growing collection. More projects will appear here as I
+              build them.
+            </p>
+          </div>
+
+          <article class="project-card reveal">
+            <div class="project-preview">
+              <div class="preview-window">
+                <div class="window-bar">
+                  <i></i><i></i><i></i>
+                  <span>ha-san.github.io</span>
+                </div>
+                <div class="preview-content">
+                  <span class="preview-kicker">PERSONAL WEBSITE</span>
+                  <strong>Learning.<br>Building.<br><em>Improving.</em></strong>
+                  <div class="preview-lines"><i></i><i></i><i></i></div>
+                  <span class="preview-chip">MY PORTFOLIO</span>
+                </div>
+              </div>
+              <span class="preview-mark">01</span>
+            </div>
+
+            <div class="project-details">
+              <div class="project-topline">
+                <span class="project-status"><i></i> In progress</span>
+                <span class="project-count">PROJECT 01</span>
+              </div>
+              <h3>MY-Portfolio</h3>
+              <p>
+                A personal website to introduce myself, document my learning
+                journey, and share the projects I build along the way.
+              </p>
+              <div class="project-bottom">
+                <div class="project-tech">
+                  <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                </div>
+                <a
+                  class="text-link"
+                  href="https://github.com/ihasan2008/MY-Portfolio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View repository <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <p class="coming-soon reveal">
+            <span>✳</span>
+            More projects coming soon — one build at a time.
+          </p>
+        </div>
+      </section>
+
+      <!-- Learning journey -->
+      <section
+        class="section"
+        id="journey"
+        aria-labelledby="journey-title"
+      >
+        <div class="container journey-grid">
+          <div class="section-intro reveal">
+            <p class="eyebrow">04 / Learning journey</p>
+            <h2 id="journey-title">Progress over<br><span>perfection.</span></h2>
+            <p class="section-aside">
+              I’m at the beginning of the journey. Here’s what I’m focusing on
+              now.
+            </p>
+          </div>
+
+          <div class="timeline reveal">
+            <article class="timeline-item">
+              <span class="timeline-dot"></span>
+              <div>
+                <span class="timeline-state">CURRENT FOCUS</span>
+                <h3>Programming fundamentals</h3>
+                <p>
+                  Understanding the core ideas behind writing clear, useful
+                  code.
+                </p>
+              </div>
+              <span class="timeline-status">Learning</span>
+            </article>
+
+            <article class="timeline-item">
+              <span class="timeline-dot"></span>
+              <div>
+                <span class="timeline-state">BUILDING</span>
+                <h3>HTML, CSS &amp; JavaScript</h3>
+                <p>
+                  Practicing by making responsive pages and small interactions.
+                </p>
+              </div>
+              <span class="timeline-status">Practicing</span>
+            </article>
+
+            <article class="timeline-item">
+              <span class="timeline-dot"></span>
+              <div>
+                <span class="timeline-state">ONGOING</span>
+                <h3>Git &amp; GitHub</h3>
+                <p>
+                  Learning to track changes and share my projects as I go.
+                </p>
+              </div>
+              <span class="timeline-status">Learning</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Future goals -->
+      <section class="section section-goals" aria-labelledby="goals-title">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div>
+              <p class="eyebrow">05 / Looking ahead</p>
+              <h2 id="goals-title">The direction <span>I’m heading.</span></h2>
+            </div>
+            <p class="section-aside">
+              These are goals I’m working toward, not achievements I’m claiming.
+            </p>
+          </div>
+
+          <div class="goals-grid">
+            <article class="goal-card reveal">
+              <span class="goal-number">01</span>
+              <p class="eyebrow">NEAR TERM</p>
+              <h3>Build a strong foundation.</h3>
+              <ul>
+                <li>Strengthen programming fundamentals</li>
+                <li>Practice problem solving regularly</li>
+                <li>Learn JavaScript and responsive web design</li>
+                <li>Get comfortable with Git workflows</li>
+              </ul>
+            </article>
+
+            <article class="goal-card goal-card-accent reveal">
+              <span class="goal-number">02</span>
+              <p class="eyebrow">FURTHER AHEAD</p>
+              <h3>Make useful things.</h3>
+              <ul>
+                <li>Study data structures and algorithms</li>
+                <li>Explore full-stack development</li>
+                <li>Create projects that solve real problems</li>
+                <li>Learn more about AI and cybersecurity</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section
+        class="section contact-section"
+        id="contact"
+        aria-labelledby="contact-title"
+      >
+        <div class="container contact-inner reveal">
+          <p class="eyebrow">06 / Get in touch</p>
+          <h2 id="contact-title">Let’s connect<br><span>and keep learning.</span></h2>
+          <p>
+            I’m happy to connect with fellow learners and developers. Find me
+            on GitHub.
+          </p>
+          <a
+            class="button button-primary"
+            href="https://github.com/ihasan2008"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit my GitHub <span aria-hidden="true">↗</span>
+          </a>
+
+          <div class="social-row">
+            <a
+              class="social-link"
+              href="https://github.com/ihasan2008"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="HaSaN on GitHub"
+            >
+              <img src="assets/github.png" alt="" width="24" height="24">
+              <span>GitHub</span>
+              <b>↗</b>
+            </a>
+
+            <a
+              class="social-link"
+              href="https://facebook.com/ihasan2008"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="HaSaN on Facebook"
+            >
+              <img src="assets/facebook.png" alt="" width="24" height="24">
+              <span>Facebook</span>
+              <b>↗</b>
+            </a>
+
+            <a
+              class="social-link"
+              href="https://youtube.com/@ihasan2008"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="HaSaN on YouTube"
+            >
+              <img src="assets/youtube.png" alt="" width="24" height="24">
+              <span>YouTube</span>
+              <b>↗</b>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a class="wordmark" href="#home" aria-label="HaSaN, back to top">
+          <span class="wordmark-icon" aria-hidden="true">H</span>
+          <span class="wordmark-name">HaSaN</span>
+        </a>
+        <p>Built with curiosity and continuous learning.</p>
+        <div>
+          <span>© <span data-year></span> HaSaN</span>
+          <a href="#home">Back to top ↑</a>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
